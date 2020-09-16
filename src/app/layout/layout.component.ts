@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DINAMIC_MENU } from '../dinamic-menu/dinamic-menu.token';
+import { DINAMIC_MENU } from '../dinamic-menu.token';
 
 @Component({
   selector: 'app-layout',

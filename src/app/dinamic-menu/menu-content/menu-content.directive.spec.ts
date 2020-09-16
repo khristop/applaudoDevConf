@@ -1,9 +1,9 @@
 import { Injector } from '@angular/core';
-import { MenuContentDirective } from './menu-content.directive';
+import { SectionContentDirective } from './section-content.directive';
 
-describe('MenuContentDirective', () => {
+describe('SectionContentDirective', () => {
   it('should create an instance', () => {
-    const directive = new MenuContentDirective(null, {} as Injector);
+    const directive = new SectionContentDirective(null, {} as Injector);
     expect(directive).toBeTruthy();
   });
 });

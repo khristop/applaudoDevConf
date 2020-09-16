@@ -13,7 +13,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { DinamicMenuModule } from './dinamic-menu/dinamic-menu.module';
+import { DINAMIC_MENU } from './dinamic-menu.token';
+import { BehaviorSubject } from 'rxjs';
+import { DinamicSectionModule } from './dinamic-menu/dinamic-section.module';
 
 @NgModule({
   declarations: [
@@ -33,8 +35,9 @@ import { DinamicMenuModule } from './dinamic-menu/dinamic-menu.module';
     MatIconModule,
     MatListModule,
     // Menu module
-    DinamicMenuModule
+    DinamicSectionModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [{ provide: DINAMIC_MENU, useValue: new BehaviorSubject(null) }]
 })
 export class AppModule { }

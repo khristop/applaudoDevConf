@@ -2,9 +2,9 @@ import { Directive, InjectionToken, Injector, Input, OnDestroy, TemplateRef, Vie
 import { BehaviorSubject, Subject, Subscription } from 'rxjs';
 
 @Directive({
-  selector: '[appMenuContent]'
+  selector: '[appSectionContent]'
 })
-export class MenuContentDirective implements OnDestroy {
+export class SectionContentDirective implements OnDestroy {
   private contentSubscription: Subscription;
   private lastContainer: ViewContainerRef;
 
@@ -23,7 +23,7 @@ export class MenuContentDirective implements OnDestroy {
     }
   }
 
-  @Input() set appMenuContent(containerToken: InjectionToken<BehaviorSubject<ViewContainerRef>>) {
+  @Input() set appSectionContent(containerToken: InjectionToken<BehaviorSubject<ViewContainerRef>>) {
     if (this.contentSubscription) {
       this.contentSubscription.unsubscribe();
     }

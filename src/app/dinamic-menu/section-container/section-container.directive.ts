@@ -2,9 +2,9 @@ import { Directive, InjectionToken, Injector, Input, OnDestroy, Optional, Self, 
 import { BehaviorSubject, Subject, Subscription } from 'rxjs';
 
 @Directive({
-  selector: '[appMenuContainer]',
+  selector: '[appSectionContainer]',
 })
-export class MenuContainerDirective implements OnDestroy {
+export class SectionContainerDirective implements OnDestroy {
   containerSubject: Subject<ViewContainerRef>;
 
   constructor(
@@ -15,10 +15,11 @@ export class MenuContainerDirective implements OnDestroy {
   ngOnDestroy() {
     if (this.containerSubject) {
       this.containerSubject.next(null);
+      this.containerSubject.unsubscribe();
     }
   }
 
-  @Input() set appMenuContainer(containerToken: InjectionToken<BehaviorSubject<ViewContainerRef>>) {
+  @Input() set appSectionContainer(containerToken: InjectionToken<BehaviorSubject<ViewContainerRef>>) {
     if (this.containerSubject) {
       this.containerSubject.next(null);
     }

@@ -17,7 +17,9 @@
     <mat-toolbar color="primary">
       <span>DI Demo</span>
       <!-- Dinamic menu -->
-      <ng-container [appMenuContainer]="dinamicMenuToken"></ng-container>
+      <div class="menu-wrapper">
+        <ng-container [appSectionContainer]="dinamicMenuToken"></ng-container>
+      </div>
       <!-- ---- -->
     </mat-toolbar>
     <!-- Add Content Here -->

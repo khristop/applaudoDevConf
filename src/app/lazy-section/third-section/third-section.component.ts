@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DINAMIC_MENU } from 'src/app/dinamic-menu.token';
 
 @Component({
   selector: 'app-third-section',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./third-section.component.scss']
 })
 export class ThirdSectionComponent implements OnInit {
+  public readonly dinamicMenuToken = DINAMIC_MENU;
 
   constructor() { }
 
