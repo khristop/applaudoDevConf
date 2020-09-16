@@ -13,13 +13,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { DinamicMenuModule } from './dinamic-menu/dinamic-menu.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     FirstSectionComponent,
-    SecondSectionComponent
+    SecondSectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,8 +32,9 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    // Menu module
+    DinamicMenuModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

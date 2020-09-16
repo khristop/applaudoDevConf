@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { DINAMIC_MENU } from '../dinamic-menu/dinamic-menu.token';
 
 @Component({
   selector: 'app-layout',
@@ -9,13 +7,6 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent {
-
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
-
-  constructor(private breakpointObserver: BreakpointObserver) {}
-
+  public readonly dinamicMenuToken = DINAMIC_MENU;
+  constructor() {}
 }
