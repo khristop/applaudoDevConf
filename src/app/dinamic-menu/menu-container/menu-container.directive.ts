@@ -1,41 +1,29 @@
 import { Directive, InjectionToken, Injector, Input, OnDestroy, Optional, Self, TemplateRef, ViewContainerRef } from '@angular/core';
-import { BehaviorSubject, Subscription } from 'rxjs';
+import { BehaviorSubject, Subject, Subscription } from 'rxjs';
 
 @Directive({
   selector: '[appMenuContainer]',
 })
 export class MenuContainerDirective implements OnDestroy {
-  private containerSubscription: Subscription;
-  private lastContainer: ViewContainerRef;
+  containerSubject: Subject<ViewContainerRef>;
 
   constructor(
-    @Optional() @Self() private templateRef: TemplateRef<unknown>,
+    private viewContainer: ViewContainerRef,
     private injector: Injector,
-  ) {}
+    ) {}
 
   ngOnDestroy() {
-    if (this.containerSubscription) {
-      this.containerSubscription.unsubscribe();
-    }
-
-    if (this.lastContainer) {
-      this.lastContainer.clear();
+    if (this.containerSubject) {
+      this.containerSubject.next(null);
     }
   }
 
   @Input() set appMenuContainer(containerToken: InjectionToken<BehaviorSubject<ViewContainerRef>>) {
-    if (this.containerSubscription) {
-      this.containerSubscription.unsubscribe();
+    if (this.containerSubject) {
+      this.containerSubject.next(null);
     }
 
-    this.containerSubscription = this.injector.get(containerToken).asObservable().subscribe(viewContainerRef =>  {
-      if (this.lastContainer) {
-        this.lastContainer.clear();
-      }
-      this.lastContainer = viewContainerRef;
-      if (viewContainerRef) {
-        viewContainerRef.createEmbeddedView(this.templateRef);
-      }
-    });
+    this.containerSubject = this.injector.get(containerToken);
+    this.containerSubject.next(this.viewContainer);
   }
 }

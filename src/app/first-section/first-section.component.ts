@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DINAMIC_MENU } from '../dinamic-menu/dinamic-menu.token';
 
 @Component({
   selector: 'app-first-section',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./first-section.component.scss']
 })
 export class FirstSectionComponent implements OnInit {
-
+  public readonly dinamicMenuToken = DINAMIC_MENU;
   constructor() { }
 
   ngOnInit(): void {
