@@ -13,7 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { DINAMIC_MENU } from './dinamic-menu.token';
+import { DINAMIC_MENU } from './tokens/dinamic-menu.token';
 import { BehaviorSubject } from 'rxjs';
 import { DinamicSectionModule } from './dinamic-menu/dinamic-section.module';
 

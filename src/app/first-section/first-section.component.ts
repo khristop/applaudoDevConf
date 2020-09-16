@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DINAMIC_MENU } from '../dinamic-menu.token';
+import { DINAMIC_MENU } from '../tokens/dinamic-menu.token';
 
 @Component({
   selector: 'app-first-section',
