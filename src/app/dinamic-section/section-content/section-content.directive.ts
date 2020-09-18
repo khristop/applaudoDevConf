@@ -34,7 +34,9 @@ export class SectionContentDirective implements OnDestroy {
       }
       this.lastContainer = viewContainerRef;
       if (viewContainerRef) {
-        viewContainerRef.createEmbeddedView(this.templateRef);
+        setTimeout(() => {
+          viewContainerRef.createEmbeddedView(this.templateRef);
+        });
       }
     });
   }

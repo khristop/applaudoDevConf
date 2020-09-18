@@ -8,6 +8,7 @@ import { DINAMIC_MENU } from '../tokens/dinamic-menu.token';
 })
 export class FirstSectionComponent implements OnInit {
   public readonly dinamicMenuToken = DINAMIC_MENU;
+  value = '';
   constructor() { }
 
   ngOnInit(): void {

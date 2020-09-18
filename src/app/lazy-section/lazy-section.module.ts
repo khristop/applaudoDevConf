@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { LazySectionRoutingModule } from './lazy-section-routing.module';
 import { ThirdSectionComponent } from './third-section/third-section.component';
-import { DinamicSectionModule } from '../dinamic-menu/dinamic-section.module';
+import { DinamicSectionModule } from '../dinamic-section/dinamic-section.module';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 @NgModule({
   declarations: [ThirdSectionComponent],
   imports: [
     CommonModule,
+    MatCheckboxModule,
     LazySectionRoutingModule,
     DinamicSectionModule
   ]

@@ -13,9 +13,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { DINAMIC_MENU } from './tokens/dinamic-menu.token';
 import { BehaviorSubject } from 'rxjs';
-import { DinamicSectionModule } from './dinamic-menu/dinamic-section.module';
+import { DinamicSectionModule } from './dinamic-section/dinamic-section.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,12 +32,16 @@ import { DinamicSectionModule } from './dinamic-menu/dinamic-section.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatButtonToggleModule,
+    MatInputModule,
+    MatFormFieldModule,
     // Menu module
     DinamicSectionModule
   ],
